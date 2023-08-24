@@ -32,7 +32,7 @@ public class Circle extends Shape implements Comparable<Circle>{
      */
     @Override
     public int compareTo(Circle anotherCircle) {
-        return (int) (this.getArea()-anotherCircle.getArea());
+        return (int) (this.getArea() - anotherCircle.getArea());
     }
 }
 
