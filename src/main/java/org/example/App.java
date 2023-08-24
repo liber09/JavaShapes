@@ -33,6 +33,9 @@ public class App {
 
     }
 
+    /*
+    Method used to print the area of the shapes in an arraylist
+     */
     private static void printList(ArrayList<Shape> shapes) {
         for(int i = 0; i<shapes.size(); i++){
             Shape shape = shapes.get(i);
@@ -40,6 +43,10 @@ public class App {
         }
     }
 
+    /*
+    Method that creates 8 shapes (4 circles and 4 rectangles), adds them to
+    an arraylist and returns the list.
+     */
     private static ArrayList<Shape> createRandomShapes() {
         Random rnd = new Random();
         ArrayList<Shape> createdShapes = new ArrayList<>();
