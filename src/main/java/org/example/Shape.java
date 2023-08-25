@@ -6,12 +6,24 @@ public abstract class Shape implements Comparable<Shape>{
     public abstract double getArea();
     public abstract double getPerimeter();
 
-    public static void CreateShape(double x) {
-
+    /*
+    Method that can be used to create a new Circle. We know it is a circle because
+    it only contains one parameter
+     */
+    public static Circle CreateShape(double x) {
+        Circle c = new Circle(x);
+        c.type = "Circle";
+        return c;
     }
 
-    public static void CreateShape(double x, double y) {
-
+    /*
+    Method that can be used to create a new Rectangle. We know it is a Rectangle because
+    it contains two parameters
+     */
+    public static Rectangle CreateShape(double x, double y) {
+        Rectangle r = new Rectangle(x,y);
+        r.setType("Rectangle");
+        return r;
     }
 
 }
