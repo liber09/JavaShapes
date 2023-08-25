@@ -17,6 +17,7 @@ public class App {
             System.out.println("--------------");
             System.out.println("1. Create random shapes and sort them by area");
             System.out.println("2. Create Shapes");
+            System.out.println("e. exit application");
             userSelection = sc.nextLine();
 
             switch(userSelection) {
