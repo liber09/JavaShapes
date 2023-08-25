@@ -1,7 +1,8 @@
 package org.example;
 
-public abstract class Shape {
+public abstract class Shape implements Comparable<Shape>{
 
+    public abstract String getType();
     public abstract double getArea();
     public abstract double getPerimeter();
 

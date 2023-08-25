@@ -1,17 +1,26 @@
 package org.example;
 
-public class Circle extends Shape implements Comparable<Circle>{
+public class Circle extends Shape{
     double radius;
+    String type;
 
     public Circle(Double radius){
         this.radius = radius;
     }
-    public double getDiameter() {
-        return radius;
+    public double getRadius() {
+        return this.radius;
     }
 
     public void setRadius(double value){
         this.radius = value;
+    }
+
+    public String getType(){
+        return this.type;
+    }
+
+    public void setType(String value){
+        this.type = value;
     }
 
     //Method that calculates the area of the circle
@@ -31,8 +40,8 @@ public class Circle extends Shape implements Comparable<Circle>{
     negative if other is larger or 0 if equal area.
      */
     @Override
-    public int compareTo(Circle anotherCircle) {
-        return (int) (this.getArea() - anotherCircle.getArea());
+    public int compareTo(Shape anotherShape) {
+        return (int) (this.getArea() - anotherShape.getArea());
     }
 }
 

@@ -1,9 +1,10 @@
 package org.example;
 
-public class Rectangle extends Shape implements Comparable<Rectangle> {
+public class Rectangle extends Shape {
 
     private double width;
     private double height;
+    private String type;
 
     public Rectangle(double width, double height){
         this.width = width;
@@ -26,6 +27,10 @@ public class Rectangle extends Shape implements Comparable<Rectangle> {
         this.width = width;
     }
 
+    public void setType(String value){
+        this.type = value;
+    }
+
     //Method that calculates the area of the rectangle
     @Override
     public double getArea() {
@@ -43,7 +48,12 @@ public class Rectangle extends Shape implements Comparable<Rectangle> {
     negative if other is larger or 0 if equal area.
      */
     @Override
-    public int compareTo(Rectangle anotherRectangle) {
-        return (int) (this.getArea() - anotherRectangle.getArea());
+    public int compareTo(Shape anotherShape) {
+        return (int) (this.getArea() - anotherShape.getArea());
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
     }
 }
