@@ -70,4 +70,16 @@ public class Rectangle extends Shape {
         boolean typeEquals = Objects.equals(this.getType(), other.getType());
         return areaEquals && typeEquals;
     }
+
+    /*
+    when overriding equals you must also override hashCode. Now we can not save two equal objects in the hashset
+     */
+    @Override
+    public final int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int)getWidth() + (int)getHeight();
+        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
+        return result;
+    }
 }
