@@ -17,11 +17,12 @@ public class App {
             System.out.println("--------------");
             System.out.println("1. Create random shapes and sort them by area");
             System.out.println("2. Create Shapes");
+            System.out.println("3. Print list of shapes");
             System.out.println("e. exit application");
             userSelection = sc.nextLine();
 
-            switch(userSelection) {
-                case "1": {
+            switch (userSelection) {
+                case "1" -> {
                     shapes = createRandomShapes();
                     System.out.println("List is now unsorted");
                     printList(shapes);
@@ -29,10 +30,14 @@ public class App {
                     System.out.println("List is now sorted by area");
                     printList(shapes);
                 }
-            }
-            if (Objects.equals(userSelection, "1")) {
+                case "2" -> {
+                }
+                case "3" -> {
 
+                }
+                default -> System.out.println("You made a incorrect choice! Try again.");
             }
+
 
 
         }while(!userSelection.equalsIgnoreCase("e"));
