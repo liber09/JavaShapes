@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Circle extends Shape{
     double radius;
     String type;
@@ -33,6 +35,18 @@ public class Circle extends Shape{
     @Override
     public double getPerimeter() {
         return 2*Math.PI*radius;
+    }
+
+    /*
+    Method compares if two circles are the same.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if(o == this) return true;
+        if(!(o instanceof Circle other)) return false;
+        boolean areaEquals = this.getArea() == other.getArea();
+        boolean typeEquals = Objects.equals(this.getType(), other.getType());
+        return areaEquals && typeEquals;
     }
 
     /*

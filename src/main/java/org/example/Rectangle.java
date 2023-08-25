@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Rectangle extends Shape {
 
     private double width;
@@ -55,5 +57,17 @@ public class Rectangle extends Shape {
     @Override
     public String getType() {
         return this.type;
+    }
+
+    /*
+    Method compares if two rectangles are the same.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if(o == this) return true;
+        if(!(o instanceof Rectangle other)) return false;
+        boolean areaEquals = this.getArea() == other.getArea();
+        boolean typeEquals = Objects.equals(this.getType(), other.getType());
+        return areaEquals && typeEquals;
     }
 }

@@ -5,6 +5,7 @@ public abstract class Shape implements Comparable<Shape>{
     public abstract String getType();
     public abstract double getArea();
     public abstract double getPerimeter();
+    public abstract boolean equals(Object o);
 
     /*
     Method that can be used to create a new Circle. We know it is a circle because
