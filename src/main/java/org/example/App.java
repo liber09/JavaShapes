@@ -57,9 +57,12 @@ public class App {
     Method used to print the area of the shapes in an arraylist
      */
     private static void printList(ArrayList<Shape> shapes) {
-        for(int i = 0; i<shapes.size(); i++){
-            Shape shape = shapes.get(i);
-            System.out.printf(shape.getType() + " with area " + "%.2f%n",shape.getArea());
+        if(shapes.isEmpty()){
+            System.out.println("There are no shapes in this list");
+            return;
+        }
+        for (Shape shape : shapes) {
+            System.out.printf(shape.getType() + " with area " + "%.2f%n", shape.getArea());
         }
     }
     private static void printHashSet(HashSet<Shape> shapes) {
@@ -71,10 +74,6 @@ public class App {
         }
     }
 
-    /*
-    Method that creates 8 shapes (4 circles and 4 rectangles), adds them to
-    an arraylist and returns the list.
-     */
     private static ArrayList<Shape> createRandomShapes() {
         Random rnd = new Random();
         ArrayList<Shape> createdShapes = new ArrayList<>();
@@ -95,21 +94,28 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String selectedShapeType;
         Shape shape = null;
+        boolean shapeCreated = false;
+        do{
+            System.out.println("What shape would you like to create (circle / rectangle)?");
+            selectedShapeType = sc.nextLine();
+            if (selectedShapeType.equalsIgnoreCase("circle")){
+                System.out.println("How large radius has the circle?");
+                double radius = sc.nextDouble();
+                shape = Shape.CreateShape(radius);
+                shapeCreated = true;
+            }else if(selectedShapeType.equalsIgnoreCase("rectangle")){
+                System.out.println("How wide is the rectangle?");
+                double width = sc.nextDouble();
+                System.out.println("How high is the rectangle?");
+                double height = sc.nextDouble();
+                shape = Shape.CreateShape(width, height);
+                shapeCreated = true;
+            }else{
+                System.out.println("Incorrect choice, you can only type \"circle\" or \"rectangle\"");
+            }
 
-        System.out.println("What shape would you like to create (circle / rectangle)?");
-        selectedShapeType = sc.nextLine();
-        if (selectedShapeType.equalsIgnoreCase("circle")){
-            System.out.println("How large radius has the circle?");
-            double radius = sc.nextDouble();
-            shape = Shape.CreateShape(radius);
-        }
-        if(selectedShapeType.equalsIgnoreCase("rectangle")){
-            System.out.println("How wide is the rectangle?");
-            double width = sc.nextDouble();
-            System.out.println("How high is the rectangle?");
-            double height = sc.nextDouble();
-            shape = Shape.CreateShape(width, height);
-        }
+        }while(!shapeCreated);
+
         return shape;
     }
 }
