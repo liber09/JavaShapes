@@ -66,11 +66,14 @@ public class App {
         }
     }
     private static void printHashSet(HashSet<Shape> shapes) {
+        if(shapes.isEmpty()){
+            System.out.println("There are no shapes in this list");
+            return;
+        }
         Shape shape;
-        Iterator<Shape> itr=shapes.iterator();
-        while(itr.hasNext()){
-            shape = itr.next();
-            System.out.printf(shape.getType() + " with area " + "%.2f%n",shape.getArea());
+        for (Shape value : shapes) {
+            shape = value;
+            System.out.printf(shape.getType() + " with area " + "%.2f%n", shape.getArea());
         }
     }
 
