@@ -29,6 +29,11 @@ public class Rectangle extends Shape {
         this.width = width;
     }
 
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
     public void setType(String value){
         this.type = value;
     }
@@ -54,14 +59,6 @@ public class Rectangle extends Shape {
         return (int) (this.getArea() - anotherShape.getArea());
     }
 
-    @Override
-    public String getType() {
-        return this.type;
-    }
-
-    /*
-    Method compares if two rectangles are the same.
-     */
     @Override
     public boolean equals(Object o) {
         if(o == this) return true;

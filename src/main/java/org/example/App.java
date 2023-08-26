@@ -5,7 +5,9 @@ import java.util.*;
 public class App {
     static ArrayList<Shape> createdShapesArrayList = new ArrayList<>();
     static HashSet<Shape> createdShapesHashSet = new HashSet<>();
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         String userSelection;
         ArrayList<Shape> shapes;
@@ -57,6 +59,7 @@ public class App {
     Method used to print the area of the shapes in an arraylist
      */
     private static void printList(ArrayList<Shape> shapes) {
+
         if(shapes.isEmpty()){
             System.out.println("There are no shapes in this list");
             return;
@@ -66,6 +69,7 @@ public class App {
         }
     }
     private static void printHashSet(HashSet<Shape> shapes) {
+
         if(shapes.isEmpty()){
             System.out.println("There are no shapes in this list");
             return;
@@ -78,6 +82,7 @@ public class App {
     }
 
     private static ArrayList<Shape> createRandomShapes() {
+
         Random rnd = new Random();
         ArrayList<Shape> createdShapes = new ArrayList<>();
 
